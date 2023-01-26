@@ -4,4 +4,4 @@ for number in range(10):
         if number == 8:
             print(f"{number}{number2}")
         else:
-            print(f"{number}{number2}", end=", ")
+            print(f"{number}{number2}".format(number, number2), end=", ")
