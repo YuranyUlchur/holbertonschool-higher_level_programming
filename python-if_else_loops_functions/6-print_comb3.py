@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-for number in range(0, 89):
-    if (number < 10):
-        print("{:02d}".format(number), end=", ")
-
+for number in range(10):
+    for number2 in range(number + 1, 10):
+        if number == 8:
+            print(f"{number}{number2}")
+        else:
+            print(f"{number}{number2}", end=", ")

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def islower(c):
-    char = c.islower()
-    if (char):
+    if ord(c) > 96 and ord(c) < 123:
         return(True)
-    elif (char != 1):
+    else:
         return(False)
