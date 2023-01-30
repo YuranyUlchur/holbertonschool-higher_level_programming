@@ -10,4 +10,3 @@ def replace_in_list(my_list, idx, element):
         if x == idx:
             my_list[x] = element
             return my_list
-        
