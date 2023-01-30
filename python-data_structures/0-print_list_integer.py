@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-import sys
-
-
 def print_list_integer(my_list=[]):
-    for x in my_list:
-        sys.stdout.write(str(x))
-        print(end="\n")
+    len_list = len(my_list)
+    for x in range(len_list):
+         print("{:d}".format(my_list[x]))
