@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 def search_replace(my_list, search, replace):
     len_list = len(my_list)
     new_element = my_list[:]
