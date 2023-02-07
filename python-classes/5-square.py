@@ -14,13 +14,11 @@ class Square:
 
     """property setter to set it"""
     @size.setter
-    def size(self, size):
-        self.__size = size
-        """size must be an integer"""
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
+    def position(self, value):
+        self.__position = value
+        if (type(self.__position) != 2 or
+                not all(isinstance(x, int) and x >= 0 for x in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
         """Public instance method"""
     def area(self):
