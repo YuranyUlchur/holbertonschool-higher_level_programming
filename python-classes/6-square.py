@@ -30,14 +30,14 @@ class Square:
         return (self.__position)
 
     """assign a value to an attribute"""
-    @size.setter
+    @position.setter
     def position(self, value):
         self.__position = value
         """size must be an integer"""
-        for a in self.__position:
-            if type(a) != int:
-                raise TypeError
-            ("position must be a tuple of 2 positive integers")
+        for p in self.__position:
+            if type(p) != int:
+                raise TypeError("position must\
+ be a tuple of 2 positive integers")
 
         """Public instance method"""
     def area(self):
