@@ -33,11 +33,11 @@ class Square:
     @size.setter
     def position(self, value):
         self.__position = value
-        message = "position must be a tuple of 2 positive integers"
         """size must be an integer"""
         for a in self.__position:
             if type(a) != int:
-                raise TypeError(message)
+                raise TypeError
+            ("position must be a tuple of 2 positive integers")
 
         """Public instance method"""
     def area(self):
