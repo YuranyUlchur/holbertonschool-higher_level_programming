@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''function that adds 2 integers.'''
+
+
 def add_integer(a, b=98):
     '''comparison of int and float'''
     if(type(a) != int and type(a) != float):
