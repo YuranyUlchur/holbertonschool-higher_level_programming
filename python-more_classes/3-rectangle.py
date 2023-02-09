@@ -46,6 +46,8 @@ class Rectangle:
     '''the rectangle with the character'''
     def __str__(self):
         aux = ""
+        if self.__width == 0 or self.__height == 0:
+            return (aux)
         for i in range(self.__height):
             for x in range(self.__width):
                 aux += '#'
