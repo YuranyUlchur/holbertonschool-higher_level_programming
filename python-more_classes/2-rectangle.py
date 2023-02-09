@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''class Rectangle that defines a rectangle'''
 
 
