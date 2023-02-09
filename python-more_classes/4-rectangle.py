@@ -54,3 +54,7 @@ class Rectangle:
             if i != self.__height - 1:
                 aux += "\n"
         return aux
+
+    '''the rectangle to be able to recreate a new instance'''
+    def __repr__(self):
+        return f'Rectangle({self.__width}, {repr(self.__height)})'
