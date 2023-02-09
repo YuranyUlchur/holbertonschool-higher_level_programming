@@ -43,12 +43,14 @@ class Rectangle:
             return (0)
         return(self.__perimeter)
 
-    ''' print the rectangle with the character #'''
+    '''the rectangle with the character'''
     def __str__(self):
         aux = ""
-        for i in range(0, self.__height):
-            for x in range(0, self.__width):
-                aux += "#"
-            if i != self.__height - 1:
+        if self.__height == 0 or self.__width == 0:
+            return aux
+        for x in range(self.__height):
+            for i in range(self.__height):
+                aux += '#'
+            if x != self.__height - 1:
                 aux += "\n"
         return aux
