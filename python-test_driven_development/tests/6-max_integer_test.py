@@ -15,6 +15,7 @@ class MaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer([-3, 10, 30, 70]), 70)
         self.assertEqual(max_integer([90]), 90)
+        self.assertEqual(max_integer([3, 10, 80, 50, 60]), 80)
 
     def test_error(self):
         """Tests for error"""
