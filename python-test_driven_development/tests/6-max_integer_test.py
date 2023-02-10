@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+'''max integer'''
+
 import unittest
 
 max_integer = __import__("6-max_integer").max_integer
@@ -11,6 +14,7 @@ class MaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-3, -10, -30, -50]), -3)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer([-3, 10, 30, 70]), 70)
+        self.assertEqual(max_integer([90]), 90)
 
     def test_error(self):
         """Tests for error"""
