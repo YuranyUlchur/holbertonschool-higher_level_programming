@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 '''import argument'''
 import sys
-''' script that adds all arguments '''
+
 '''import functions'''
 save_to_json_file = __import__('5-save_to_json_file.py').save_to_json_file
 load_file = __import__('6-load_from_json_file.py').load_from_json_file
+''' script that adds all arguments '''
+
 
 args = sys.argv
 filename = "add_item.json"
@@ -19,6 +21,7 @@ def main():
         my_list = args[1:]
     my_list += args
     save_to_json_file(my_list, filename)
+
 
 if __name__ == '__main__':
     main()
