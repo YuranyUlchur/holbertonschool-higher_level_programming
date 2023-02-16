@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-''' script that adds all arguments to a Python list'''
+'''script that adds all arguments'''
 
 import sys
 import json
@@ -13,6 +13,7 @@ filename = "add_item.json"
 
 
 def main():
+    '''adds all arguments to a list, and then save them to a file:'''
     try:
         my_list = load_from_json_file(filename)
     except Exception:
