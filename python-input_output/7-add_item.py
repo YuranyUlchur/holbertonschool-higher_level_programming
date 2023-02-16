@@ -1,25 +1,22 @@
 #!/usr/bin/python3
 
-'''import argument'''
-
+''' script that adds all arguments to a Python list'''
 
 import sys
-'''import functions'''
-save_to_json_file = __import__('5-save_to_json_file.py').save_to_json_file
-load_file = __import__('6-load_from_json_file.py').load_from_json_file
+import json
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-args = sys.argv
+args = sys.argv[1:]
 filename = "add_item.json"
-''' script that adds all arguments '''
 
 
 def main():
-    '''add arguments to a list and save to filename'''
     try:
-        my_list = load_file(filename)
+        my_list = load_from_json_file(filename)
     except Exception:
-        my_list = args[1:]
+        my_list = []
     my_list += args
     save_to_json_file(my_list, filename)
 
