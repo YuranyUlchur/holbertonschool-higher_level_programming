@@ -22,6 +22,7 @@ class Student:
                 new_dict[i] = getattr(self, i)
         '''return the new dictionary'''
         return new_dict
+
     def reload_from_json(self, json):
         if json:
             new_dict = self.__dict__
