@@ -15,7 +15,15 @@ class Student:
             return self.__dict__
 
         new_dict = {}
-        for i in attrs.keys():
-            if i in attrs:
-                new_dict[i] = attrs[i]
+        for i in attrs:
+            '''returns True if the object has an attribute'''
+            if hasattr(self, i):
+                '''get the value of an attribute'''
+                new_dict[i] = getattr(self, i)
+        '''return the new dictionary'''
         return new_dict
+    def reload_from_json(self, json):
+        if json:
+            new_dict = self.__dict__
+            for i in new_dict.keys():
+                new_dict[i] = json[i]
