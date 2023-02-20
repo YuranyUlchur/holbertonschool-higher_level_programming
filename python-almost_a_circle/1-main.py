@@ -1,28 +1,20 @@
 #!/usr/bin/python3
-""" Check """
-from models.rectangle import Rectangle
+""" 0-main """
+from models.base import Base
 
-r = Rectangle(12, 14, 4, 5, 10)
-if r is None:
-    print("Can't create Rectangle")
-    exit(1)
+if __name__ == "__main__":
 
-if r._Rectangle__width != 12:
-    print("Wrong private width: {}".format(r._Rectangle__width))
-    exit(1)
+    b1 = Base()
+    print(b1.id)
 
-if r.width != 12:
-    print("Wrong width getter: {}".format(r._Rectangle__width))
-    exit(1)
+    b2 = Base()
+    print(b2.id)
 
-r.width = 5
+    b3 = Base()
+    print(b3.id)
 
-if r._Rectangle__width != 5:
-    print("Wrong private width: {}".format(r._Rectangle__width))
-    exit(1)
+    b4 = Base(12)
+    print(b4.id)
 
-if r.width != 5:
-    print("Wrong width getter: {}".format(r._Rectangle__width))
-    exit(1)
-
-print("OK", end="")
+    b5 = Base()
+    print(b5.id)

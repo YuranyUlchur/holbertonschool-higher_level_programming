@@ -32,7 +32,7 @@ class Rectangle(Base):
 
     '''update the value of the attribute'''
     @height.setter
-    def heigth(self, value):
+    def height(self, value):
         self.__height = value
         return self.__height
 
@@ -53,7 +53,7 @@ class Rectangle(Base):
         return self.__y
 
     '''update the value of the attribute'''
-    @x.setter
+    @y.setter
     def y(self, value):
         self.__y = value
         return self.__y
