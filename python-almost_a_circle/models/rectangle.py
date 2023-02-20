@@ -9,7 +9,7 @@ class Rectangle(Base):
         ''' this super call with use the logic of the init of the Base class'''
         super().__init__(id)
         '''Assign each argument '''
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
