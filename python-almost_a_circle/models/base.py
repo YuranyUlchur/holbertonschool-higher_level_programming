@@ -3,8 +3,10 @@
 
 
 class Base:
+    '''private attribute'''
+    __nb_objects = 0
     def __init__(self, id=None):
-        '''goal of it is to manage id attribute in all your future'''
+        '''validation'''
         if id is not None:
             self.id = id
         else:
