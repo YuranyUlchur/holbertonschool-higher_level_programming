@@ -74,3 +74,11 @@ class Rectangle(Base):
     def area(self):
         '''value'''
         return self.width * self.height
+
+    '''prints in stdout the Rectangle'''
+    def display(self):
+        '''scroll through and print the character'''
+        for x in range(self.height):
+            for i in range(self.width):
+                print("#", end="")
+            print()
