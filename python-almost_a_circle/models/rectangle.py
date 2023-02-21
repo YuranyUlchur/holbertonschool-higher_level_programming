@@ -78,10 +78,10 @@ class Rectangle(Base):
     '''prints in stdout the Rectangle'''
     def display(self):
         '''scroll through and print the character'''
-        for x in range(self.height):
-            for i in range(self.width):
-                print("#", end="")
+        for x in range(self.y):
             print()
+        for i in range(self.height):
+            print(" " * self.height + "#" * self.width)
 
     '''represents an object'''
     def __str__(self):
