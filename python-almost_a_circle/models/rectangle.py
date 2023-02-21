@@ -81,7 +81,8 @@ class Rectangle(Base):
         for x in range(self.y):
             print()
         for i in range(self.height):
-            print(" " * self.height + "#" * self.width)
+            print(" " * self.x, end="")
+            print("#" * self.width)
 
     '''represents an object'''
     def __str__(self):
