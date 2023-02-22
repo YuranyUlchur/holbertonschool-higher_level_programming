@@ -92,7 +92,7 @@ class Rectangle(Base):
                         self.__width, self.__height))
 
     '''assigns an argument to each attribute'''
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' assigns'''
         for i in range(len(args)):
             if i == 0:
@@ -105,3 +105,15 @@ class Rectangle(Base):
                 self.__x = args[i]
             elif i == 4:
                 self.__y = args[i]
+        '''assigns a key/value argument to attributes'''
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = value
+            elif key == "width":
+                self.__width = value
+            elif key == "height":
+                self.__height = value
+            elif key == "x":
+                self.__x = value
+            elif key == "y":
+                self.__y = value
