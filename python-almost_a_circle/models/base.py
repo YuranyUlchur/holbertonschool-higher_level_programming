@@ -34,7 +34,7 @@ class Base:
                 new_list.append(i.to_dictionary())
             new_list = cls.to_json_string(new_list)
             file.write(new_list)
-    
+
     '''returns the list of the JSON string representation '''
     @staticmethod
     def from_json_string(json_string):
@@ -43,4 +43,3 @@ class Base:
             json_string = []
             return json_string
         return json.loads(json_string)
-
