@@ -32,6 +32,5 @@ class Base:
         with open(f"{cls.__name__}.json", "w") as file:
             for i in list_objs:
                 new_list.append(i.to_dictionary())
-            new_list = json.dumps(new_list)
+            new_list = cls.to_json_string(new_list)
             file.write(new_list)
-    
