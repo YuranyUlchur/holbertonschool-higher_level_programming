@@ -39,7 +39,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         '''validation'''
-        if json_string is None:
+        if json_string is None or len(json_string) == 0:
             json_string = []
+            return json_string
         return json.loads(json_string)
 
