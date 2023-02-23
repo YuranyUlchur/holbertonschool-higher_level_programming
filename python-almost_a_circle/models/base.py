@@ -15,11 +15,11 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    '''returns the JSON string representation '''    
+    '''returns the JSON string representation'''
     @staticmethod
     def to_json_string(list_dictionaries):
         '''returns'''
         len_dic = len(list_dictionaries)
-        if len_dic is None or  len_dic == 0:
+        if list_dictionaries is None or len_dic == 0:
             return "[]"
         return json.dumps(list_dictionaries)
