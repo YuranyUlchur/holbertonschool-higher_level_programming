@@ -48,6 +48,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''create a new rectangle or square object'''
-        new_object_dummy = cls(1, 2)
-        new_object_dummy.update(**dictionary)
+        if cls.__name__ == "Square":
+            new_object_dummy = cls(1)
+            new_object_dummy.update(**dictionary)
+        else:
+            new_object_dummy = cls(1, 2)
+            new_object_dummy.update(**dictionary)
         return new_object_dummy
