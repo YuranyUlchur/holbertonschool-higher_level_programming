@@ -1,40 +1,38 @@
 #!/usr/bin/python3
-"""
-    Module of unit tests for the Base class.
-"""
+"""Base tests"""
 import unittest
 from models.base import Base
 
-basetest1 = Base()
-basetest2 = Base(89)
-
 
 class TestBase(unittest.TestCase):
-    """These tests ensure that the Base class behaves
-    correctly and has the expected functionality."""
+    """Class Base tests"""
 
-    def test_contructor(self):
-        """Test that a new instance of Base can be created
-        and is an instance of the Base class."""
-        self.assertIsInstance(basetest1, Base)
+    def test_id(self):
+        base1 = Base()
+        self.assertEqual(base1.id, 1)
+        base2 = Base()
+        self.assertEqual(base2.id, 2)
+        base3 = Base(125)
+        self.assertEqual(base3.id, 125)
 
-    def test_id_none(self):
-        """Test of Base() for assigning automatically
-        an ID + 1 of the previous exists"""
-        self.assertEqual(basetest1.id, 1)
+    def test_to_json_string_none(self):
+        self.assertEqual(Base.to_json_string(None), '[]')
 
-    def test_assignment_id(self):
-        """Verify that the id passed to the instance is equal to"""
-        self.assertEqual(basetest2.id, 89)
+    def test_to_json_string_empty(self):
+        self.assertEqual(Base.to_json_string([]), '[]')
 
-    def test_to_json_string(self):
-        """Test verifies that the method exists"""
-        list = basetest2.to_json_string(None)
-        self.assertEqual(list, [])
+    def test_to_json_string_exists(self):
+        self.assertEqual(Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
 
-    def test_from_json_string(self):
-        list = basetest2.from_json_string(None)
-        self.assertEqual(list, [])
+    def test_from_json_string_none(self):
+        self.assertEqual(Base.from_json_string(None), [])
 
-if __name__ == '__main__':
+    def test_from_json_string_empty(self):
+        self.assertEqual(Base.from_json_string("[]"), [])
+
+    def test_from_json_string_exists(self):
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
+
+
+if __name__ == "__main__":
     unittest.main()
