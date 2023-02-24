@@ -43,3 +43,11 @@ class Base:
             json_string = []
             return json_string
         return json.loads(json_string)
+
+    '''returns an instance with all attributes already set'''
+    @classmethod
+    def create(cls, **dictionary):
+        '''create a new rectangle or square object'''
+        new_object_dummy = cls(1, 2)
+        new_object_dummy.update(**dictionary)
+        return new_object_dummy
