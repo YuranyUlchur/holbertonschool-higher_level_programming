@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Rectangle tests"""
+"""square"""
 import unittest
 from models.square import Square
 import os
