@@ -1,2 +1,3 @@
 -- Cities of California
-SELECT * FROM states WHERE name = 'California' ORDER BY id ASC;
+SELECT * FROM cities, states WHERE name = 'California'
+AND id ORDER BY id ASC;
