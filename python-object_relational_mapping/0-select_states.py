@@ -3,6 +3,7 @@
 
 import MySQLdb
 import sys
+"""main performance condition"""
 
 if __name__ == "__main__":
     """define attributes take 3 arguments"""
