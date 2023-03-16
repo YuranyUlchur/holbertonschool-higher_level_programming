@@ -1,9 +1,9 @@
 -- Only Comedy
-SELECT gen.name
-FROM tv_genres AS gen
+SELECT st.name
+FROM tv_shows AS st
 JOIN tv_show_genres AS sh
-ON gen.id = sh.genre_id
-JOIN tv_shows AS st
 ON st.id = sh.show_id
-WHERE st.name = "Comedy"
-ORDER BY gen.name ASC;
+JOIN tv_genres AS g
+ON g.id = sh.genre_id
+WHERE g.name = "Comedy"
+ORDER BY st.title ASC;
