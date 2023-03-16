@@ -1,7 +1,8 @@
 -- Number of shows by genre
-SELECT sh.title, sg.genre_id
-FROM tv_shows AS sh 
-LEFT JOIN tv_show_genres AS sg
+-- GROUP BY clause to group the results by genre
+-- HAVING clause is used to filter out genres
+SELECT tv_show_genres.genre_id AS genre, COUNT(*) AS number_of_shows
+FROM tv_show_genres
 GROUP BY genre
 HAVING COUNT(*) > 0
-ORDER BY sh.title, sg.genre_id ASC;
+ORDER BY number_of_shows DESC;
