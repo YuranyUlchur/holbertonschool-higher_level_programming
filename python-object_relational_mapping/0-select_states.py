@@ -6,7 +6,7 @@
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     username = sys.argv[1]
     passwd = sys.argv[2]
@@ -14,10 +14,10 @@ if __name__ == "__main__":
 
     conn = MySQLdb.connect(
         host="localhost",
-        port = 3306,
-        user = username,
-        passwd = password,
-        db = database,
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database,
         charset="utf8"
     )
     cur = conn.cursor()
