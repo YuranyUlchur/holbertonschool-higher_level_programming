@@ -1,5 +1,5 @@
 -- Only Comedy
-SELECT st.name
+SELECT st.title
 FROM tv_shows AS st
 JOIN tv_show_genres AS sh
 ON st.id = sh.show_id
