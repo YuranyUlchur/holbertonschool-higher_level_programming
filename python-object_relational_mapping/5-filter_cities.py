@@ -29,12 +29,11 @@ if __name__ == "__main__":
                 )
                 
     rows = cur.fetchall()
+    elements = []
+    for row in rows:
+        elements.append("{}".format(row[0]))
+    print(", ".join(elements))
 
-    for row in range(len(rows)):
-        print("{}".format(rows[row][row]), end="")
-        if len(rows) < row:
-            print(", ", end="")
-        
 
     cur.close()
     conn.close()
