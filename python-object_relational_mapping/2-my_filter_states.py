@@ -23,7 +23,7 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name={}".format(matchname))
+    cursor.execute("SELECT * FROM states WHERE name LIKE {}".format(matchname))
     results = cursor.fetchall()
 
     for row in results:
