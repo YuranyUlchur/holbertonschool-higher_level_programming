@@ -22,11 +22,12 @@ if __name__ == "__main__":
     )
 
     cur = conn.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name\
-                FROM cities INNER JOIN states\
-                ON WHERE states.name = %s cities.state_id = states.id\
-                ORDER BY cities.id ASC"
+    cur.execute("SELECT cities.name FROM cities \
+                JOIN states ON cities.state_id = states.id \
+                WHERE states.name=%s \
+                ORDER BY cities.id ASC", (state_name,)
                 )
+                
     rows = cur.fetchall()
     for row in rows:
         print(row)
