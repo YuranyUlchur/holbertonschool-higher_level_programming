@@ -31,7 +31,7 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     for row in range(len(rows)):
-        print("{}".format(rows[row]), end="")
+        print("{}".format(rows[row][row]), end="")
         if len(rows) < row:
             print(", ", end="")
         
