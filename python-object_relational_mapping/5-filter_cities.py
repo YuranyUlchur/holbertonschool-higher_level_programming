@@ -27,13 +27,12 @@ if __name__ == "__main__":
                 WHERE states.name=%s \
                 ORDER BY cities.id ASC", (state_name,)
                 )
-                
+
     rows = cur.fetchall()
     elements = []
     for row in rows:
         elements.append("{}".format(row[0]))
     print(", ".join(elements))
-
 
     cur.close()
     conn.close()
