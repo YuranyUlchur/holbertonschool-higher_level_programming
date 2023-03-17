@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that prints the first State object from the database 
+script that prints the first State object from the database
 """
 
 import sys
