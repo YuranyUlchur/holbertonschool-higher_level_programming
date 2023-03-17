@@ -31,7 +31,7 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     for row in rows:
-        print("{}, ".format(row[0]), end="")
+        print("{}".format(row[0]), end=", ")
 
     cur.close()
     conn.close()
