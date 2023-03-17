@@ -30,8 +30,11 @@ if __name__ == "__main__":
                 
     rows = cur.fetchall()
 
-    for row in rows:
-        print("{}".format(row[0]), end=", ")
+    for row in range(len(rows)):
+        print("{}".format(rows[row]), end="")
+        if len(rows) < row:
+            print(", ", end="")
+        
 
     cur.close()
     conn.close()
