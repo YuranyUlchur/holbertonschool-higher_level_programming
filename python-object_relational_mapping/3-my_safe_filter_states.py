@@ -11,6 +11,9 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    """takes the argument and divides it using ';'
+    then we remove single quotes
+    """
     search_name = sys.argv[4].split(';')[0].strip("'")
 
     conn = MySQLdb.connect(
