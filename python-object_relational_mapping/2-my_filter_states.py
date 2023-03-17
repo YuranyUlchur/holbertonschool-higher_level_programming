@@ -23,7 +23,8 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE BINARY name='{}'".format(matchname))
+    cursor.execute("SELECT * FROM states WHERE BINARY name='{}'"
+                   .format(matchname))
     results = cursor.fetchall()
 
     for row in results:
