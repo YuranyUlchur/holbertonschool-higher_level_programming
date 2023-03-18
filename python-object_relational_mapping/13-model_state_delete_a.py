@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-script that deletes all State objects with a name
-containing the letter a from the database
+Deletes all State objects with a name containing
 """
 
 import sys
@@ -20,9 +19,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name.like('%a%')).all()
 
+    states = session.query(State).filter(State.name.like('%a%')).all()
     for state in states:
         session.delete(state)
+
     session.commit()
     session.close()
