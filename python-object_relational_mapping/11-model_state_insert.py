@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that lists all State objects that contain the letter a from the databas
+script that adds the State object “Louisiana” to the database h
 """
 
 import sys
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    state_name = sys.argv[4]
 
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
                            .format(username, password, database),
@@ -20,9 +21,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name.like('%a%')).\
-        order_by(State.id).all()
+    state = session.query(State).filter(State.name == state_name).first()
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    if state:
+        print(state.id)
+    else:
+        print("Not found")
     session.close()
