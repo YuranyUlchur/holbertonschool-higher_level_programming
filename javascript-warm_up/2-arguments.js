@@ -1,7 +1,7 @@
 #!/usr/bin/node
-// process.argv: contiene los argumentos pasados al
-// script en la línea de comandos.
-// length: número total de elementos
+// 'process.argv: contiene los argumentos pasados al'
+// 'script en la línea de comandos'
+// 'length: número total de elementos'
 
 const numArgs = process.argv.length - 2; 
 
