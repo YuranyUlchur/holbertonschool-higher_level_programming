@@ -7,7 +7,7 @@ module.exports = class Square extends inhe {
       c = 'X';
     }
 
-    // Imprimimos el cuadrado con el carácter especificado
+    // We print the square with the specified character
     for (let i = 0; i < this.width; i++) {
       console.log(c.repeat(this.width));
     }
