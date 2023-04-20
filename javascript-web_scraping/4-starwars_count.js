@@ -1,23 +1,16 @@
 #!/usr/bin/node
 // script that prints the number of movies
-const request = require('request'); // Requerir el módulo 'request'
-
-// Get the API URL or use the default URL
-const apiUrl = process.argv[2] || 'https://swapi-api.hbtn.io/api/films/';
-
-// Make the API request
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.log('Ocurrió un error al hacer la solicitud:');
-    console.log(error);
-  } else {
-    // objets of the body
-    const filmsData = JSON.parse(body).results;
-    const wedgeAntillesFilms = filmsData.filter(film => {
-      // Filter the movies
-      return film.characters.includes('https://swapi-api.hbtn.io/api/people/18/');
-    });
-    // Print the number of films
-    console.log(`${wedgeAntillesFilms.length}`);
+const request = require('request');
+const url = process.argv[2];
+request.get(url, function (err, response, body) {
+  err = 0;
+  response = '';
+  let count = 0;
+  const json = JSON.parse(body);
+  for (const films of json.results) {
+    for (const people of films.characters) {
+      if (people.includes('18')) { count++; }
+    }
   }
+  console.log(count);
 });
