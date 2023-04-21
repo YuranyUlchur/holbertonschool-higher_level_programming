@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// updates the text color of the header
+// Add red class
 $('#red_header').click(function () {
   $('header').addClass('red');
 });
